@@ -20,8 +20,10 @@
             <a id="link-signin" class="navlink" href="/signin">sign in</a>
         </nav>
     </header>
-    <main></main>
-    <template id="main-page"></template>
+    <main class="wrapper"></main>
+    <template id="main-page">
+        <section class="content"></section>
+    </template>
     <template id="sign-in-page">
         <section id="sign-in">
             <label for="name">Name</label>
@@ -31,31 +33,13 @@
     </template>
     <template id="admin-page">
     </template>
-    <template id="guest-row">
-        <tr>
-            <td class="guest-name"></td>
-            <td class="guest-status"></td>
-            <td class="guest-remove"><a href="#" class="delete-guest">🗑️</a></td>
-        </tr>
-    </template>
     <template id="guest-list">
-        <h2>Guests</h2>
-        <ol>
-
-        </ol>
-    </template>
-    <template id="guest-table">
-        <h2>Guests</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <section class="content">
+            <h2>Guests</h2>
+            <ol>
+    
+            </ol>
+        </section>
     </template>
 </body>
 

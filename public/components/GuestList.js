@@ -34,7 +34,6 @@ export default class GuestList extends HTMLElement {
     createLi(guest) {
         const li = document.createElement("li")
         const nameSpan = makeElementWithText("span", guest.name)
-        const statusSpan = makeElementWithText("span", guest.status)
         const trashSpan = document.createElement("span")
         const trashLink = makeElementWithText("a", "🗑️")
         trashLink.href = "#"
@@ -43,7 +42,7 @@ export default class GuestList extends HTMLElement {
             await removeGuest(guest.id)
         })
         trashSpan.appendChild(trashLink)
-        li.appendChildren([nameSpan, statusSpan, trashSpan])
+        li.appendChildren([nameSpan, trashSpan])
 
         return li
     }

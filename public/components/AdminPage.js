@@ -8,10 +8,10 @@ export default class AdminPage extends HTMLElement {
     async connectedCallback() {
         this.render()
 
-        const eventSource = new EventSource("/guest-updates")
-        eventSource.onmessage = event => {
-            console.log(event.data)
-        }
+        // const eventSource = new EventSource("/guest-updates")
+        // eventSource.onmessage = event => {
+        //     console.log(event.data)
+        // }
 
         // const response = await fetch("/guest-updates", {
         //     headers: {
@@ -51,6 +51,7 @@ export default class AdminPage extends HTMLElement {
     render() {
         const content = $temp("admin-page")
         const guestListComponent = document.createElement("guest-list")
+        guestListComponent.classList.add("content")
         guestListComponent.dataset.guests = JSON.stringify(this.guests);
         content.appendChild(guestListComponent)
         this.root.appendChild(content)

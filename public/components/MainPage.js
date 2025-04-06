@@ -9,8 +9,7 @@ export default class MainPage extends HTMLElement {
     }
 
     render() {
-        const template = document.getElementById("main-page")
-        const content = template.content.cloneNode(true)
+        const content = $temp("main-page")
         this.root.appendChild(content)
     }
 }
