@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3030;
+const port = process.env.PORT;
 const {getGuests, addGuest, removeGuest} = require("./database.js")
 const EventEmitter = require("node:events")
 class MyEmitter extends EventEmitter{}
