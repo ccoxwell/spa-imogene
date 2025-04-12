@@ -1,10 +1,10 @@
 import Store from "../services/Store.js"
-import Router from "../services/Router.js"
 import {getGuests} from "../services/Guests.js"
-import MainPage from "../components/MainPage.js"
-import SignInPage from "./components/SignInPage.js"
-import AdminPage from "./components/AdminPage.js"
+import MainPage from "./components/views/MainPage.js"
+import SignInPage from "./components/views/SignInPage.js"
+import AdminPage from "./components/views/AdminPage.js"
 import GuestList from "./components/GuestList.js"
+import Router from "../services/Router.js"
 
 window.app = {}
 app.store = Store;

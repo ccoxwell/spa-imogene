@@ -2,30 +2,40 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Sofia&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Sofia&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="./style.css">
     <script src="app.js" defer type="module"></script>
 </head>
 
 <body>
-    <header>
-        <h1>spa imogene</h1>
+    <main class="wrapper">
+    </main>
+    <footer>
         <nav>
-            <a id="link-home" class="navlink" href="/">home</a>
-            <a id="link-admin" class="navlink" href="/admin">admin</a>
-            <a id="link-signin" class="navlink" href="/signin">sign in</a>
+            <p>
+                <a href="/" id=link-home" class="navlink">Home</a> | <a href="/signin" id="link-signin" class="navlink">Guest Entrance</a> | <a href="/admin" id="link-admin" class="navlink">Admin Entrance</a>
+            </p>
         </nav>
-    </header>
-    <main class="wrapper"></main>
+    </footer>
     <template id="main-page">
-        <section class="content"></section>
+        <section class="content">
+            <h1 class="title">the amazing imogene spa</h1>
+            <!-- <img class="hero" src="./images/imo_landscape.webp"> -->
+            <picture class="hero">
+                <source media="(max-width:800px)" srcset="./images/imo_square.webp">
+                <source media="(min-width:801px)" srcset="./images/imo_landscape.webp">
+                <img src="./images/imo_square.webp">
+            </picture>
+        </section>
     </template>
     <template id="sign-in-page">
-        <section id="sign-in">
+        <section class="content" id="sign-in">
             <label for="name">Name</label>
             <input id="name" name="name">
             <button id="submit-guest">Submit</button>
@@ -37,7 +47,7 @@
         <section class="content">
             <h2>Guests</h2>
             <ol>
-    
+
             </ol>
         </section>
     </template>

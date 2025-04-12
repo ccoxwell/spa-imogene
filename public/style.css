@@ -5,10 +5,9 @@
     --color-text-header: #01573d;
     --color-primary: #da9f87;
     --wrapper-height: 87vh;
-    --image-max-width: 300px;
     --image-margin: 3rem;
     --font-family: Caudex;
-    --font-family-header: Sofia;
+    --font-family-header: Allura;
     --font-size-header: 3rem;
   }
   
@@ -28,29 +27,12 @@
   
   /* Page structure */
   .wrapper {
-    min-height: var(--wrapper-height);
+    height: var(--wrapper-height);
     display: grid;
     place-items: center;
     margin: 0 1rem;
   }
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Very light scaling for our illustration */
-  .title {
-    color: var(--color-text-header);
-    font-family: var(--font-family-header);
-    font-size: var(--font-size-header);
-    letter-spacing: var(--letter-spacing-header);
-    line-height: 105%;
-    margin: 0;
-  }
-  
-  /* Button - Add it from the README instructions */
+
   button,
   input {
     font-family: inherit;
@@ -62,16 +44,13 @@
     padding: 0.5rem 1rem;
     transition: 500ms;
   }
+
+  footer {
+    display: grid;
+    place-items: center;
+  }
   
   /* Subheading */
   h2 {
     color: var(--color-text-header);
   }
-  
-  /* Button dip
-  - Toggling this class on and off will move it down and up again
-  - The button transition property above determines the speed of the translate (500ms)
-  */
-  .dipped {
-    transform: translateY(5px);
-  }  

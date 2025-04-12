@@ -27,6 +27,7 @@ const Router = {
                 pageElement = document.createElement("admin-page")
                 break;
             case "/signin":
+                console.log(document)
                 pageElement = document.createElement("sign-in-page")
         }
         if (pageElement) {
