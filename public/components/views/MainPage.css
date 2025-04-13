@@ -2,6 +2,7 @@
 
 .hero img {
     max-width: 90vw;
+    max-height: 50vh;
     filter: opacity(65%);
     transition: filter 0.5s;
     margin: 1rem 0;

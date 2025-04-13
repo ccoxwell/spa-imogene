@@ -1,5 +1,5 @@
 const API = {
-    deleteGuestUrl: "/delete-guest",
+    deleteGuestUrl: "/api/delete-guest",
     deleteGuest: async function(id) {
         await fetch(this.deleteGuestUrl, {
             method: "POST",
@@ -9,7 +9,7 @@ const API = {
             body: JSON.stringify({guestId: id})
         })
     },
-    fetchGuestsUrl: "/list-guests",
+    fetchGuestsUrl: "/api/list-guests",
     fetchGuests: async function() {
         const response = await fetch(this.fetchGuestsUrl)
         if (!response.ok) {
@@ -18,7 +18,7 @@ const API = {
         const guests = await response.json()
         return guests
     },
-    addGuestUrl: "/add-guest",
+    addGuestUrl: "/api/add-guest",
     addGuest: async function(name) {
         const response = await fetch(this.addGuestUrl, {
             method: "POST",
@@ -31,7 +31,7 @@ const API = {
         app.store.guests = guests;
         return guests;
     },
-    removeGuestUrl: "/delete-guest",
+    removeGuestUrl: "/api/delete-guest",
     removeGuest: async function(id) {
         const response = await fetch(this.removeGuestUrl, {
             method: "POST",
