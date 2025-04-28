@@ -6,3 +6,13 @@
     width: 80vw;
     text-align: center;
   }
+
+  h1 {
+    color: var(--color-text-header);
+    font-family: var(--font-family-header);
+    font-size: var(--font-size-header);
+    letter-spacing: var(--letter-spacing-header);
+    line-height: 105%;
+    margin: 0;
+    margin-block: 0.67em;
+  }

@@ -2,6 +2,7 @@ import { makeElementWithText } from "../utils/dom-tools.js"
 import { removeGuest } from "../services/Guests.js"
 
 export default class GuestList extends HTMLElement {
+    static observedAttributes = ["data-guests"]
     constructor() {
         super()
         this.root = this.attachShadow({mode: "open"})
@@ -9,6 +10,11 @@ export default class GuestList extends HTMLElement {
     }
 
     connectedCallback() {
+        this.render()
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        console.log(`${name} changed. new value is ${newValue}`)
         this.render()
     }
 
