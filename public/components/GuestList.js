@@ -6,7 +6,12 @@ export default class GuestList extends HTMLElement {
     constructor() {
         super()
         this.root = this.attachShadow({mode: "open"})
-        this.guests = this.dataset.guests
+        this.eventSource = new EventSource("/events/new-guest-event")        
+        this.eventSource.addEventListener("message", e => {
+            let {guestList} = JSON.parse(e.data)
+            app.store.guests = [...guestList]
+            this.dataset.guests = JSON.stringify(guestList)
+        })
     }
 
     connectedCallback() {
@@ -14,11 +19,15 @@ export default class GuestList extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log(`${name} changed. new value is ${newValue}`)
         this.render()
+    }
+    disconnectedCallback() {
+        console.log("closing event stream")
+        this.eventSource.close();
     }
 
     render() {
+        this.root.innerHTML = ""
         const content = $temp("guest-list")
         const ol = content.querySelector("ol")
         const guests = JSON.parse(this.dataset.guests)
@@ -46,6 +55,7 @@ export default class GuestList extends HTMLElement {
         trashLink.addEventListener("click", async (e) => {
             e.preventDefault()
             await removeGuest(guest.id)
+            this.dataset.guests = JSON.stringify([...app.store.guests])
         })
         trashSpan.appendChild(trashLink)
         li.appendChildren([nameSpan, trashSpan])
